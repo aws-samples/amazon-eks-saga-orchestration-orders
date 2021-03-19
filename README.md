@@ -16,7 +16,7 @@ This project implements the `Orders` microservice that participates in the saga 
 1. Clone the repo.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-orders
+git clone ${GIT_URL}/amazon-eks-saga-orchestration-orders
 ```
 
 > Skip this step, if instructions to build images were followed in the `eks-saga-aws` repository. Else, follow the steps below to build and push the image to Amazon ECR.
@@ -36,7 +36,7 @@ docker build -t ${IMAGE_URI}:0.0.0 . && docker push ${IMAGE_URI}:0.0.0
 1. Create `ConfigMap` running the command below from the `yaml` folder. Change `Asia/Kolkata` to appropriate timezone value in the `sed` command below. Then, run the following commands to create the `ConfigMap`.
 
 ```bash
-cd eks-saga-orders/yaml
+cd amazon-eks-saga-orchestration-orders/yaml
 RDS_DB_ID=eks-saga-db
 DB_ENDPOINT=`aws rds describe-db-instances --db-instance-identifier ${RDS_DB_ID} --query 'DBInstances[0].Endpoint.Address' --output text`
 sed -e 's#timeZone#Asia/Kolkata#g' \
