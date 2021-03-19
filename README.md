@@ -24,7 +24,7 @@ git clone ${GIT_URL}/amazon-eks-saga-orchestration-orders
 1. Build the Docker image and push to Docker repository.
 
 ```bash
-cd eks-saga-orders/src
+cd amazon-eks-saga-orchestration-orders/src
 
 aws ecr get-login-password --region ${REGION_ID} | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION_ID}.amazonaws.com
 IMAGE_URI=${ACCOUNT_ID}.dkr.ecr.${REGION_ID}.amazonaws.com/eks-saga/orders
